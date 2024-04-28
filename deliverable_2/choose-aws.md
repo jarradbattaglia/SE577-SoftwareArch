@@ -1,13 +1,13 @@
 ADR 3: Choosing AWS as our Cloud Service
 
-When running multiplayer game servers, we must have servers that clients connect to play and communicate with other players
+When looking to build our online infrastructure for our game we need an environment that allows us the flexibility to scale to multiple areas of the world quickly, while offering an infrastructure that can scale to millions of customers in a short period of time, while having a standard of high availability and ensuring low latency.
 
 Decision
 
-We have decided to use containers to deploy and run our game server code 
+We have decided to use only one cloud provider and that will be Amazon Web Services.  They will be used to host all of our networking services and resources including our game servers.
 
 Rationale
-Describe here the rationale for the design decision. Also indicate the rationale for significant rejected alternatives. This section may also indicate assumptions, constraints, requirements, and results of evaluations and experiments.
+The rationale for o
 
 Status
 Proposed
