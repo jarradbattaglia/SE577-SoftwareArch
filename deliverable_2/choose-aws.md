@@ -7,10 +7,13 @@ Decision
 We have decided to use only one cloud provider and that will be Amazon Web Services.  They will be used to host all of our networking services and resources including our game servers.
 
 Rationale
-The rationale for o
+
+There were multiple choices that we could have chosen, whether that be building our own datacenter, using a mix of cloud providers together, or 
+The rationale for choosing AWS over the decision to use other cloud providers, or a mix of cloud providers is 
 
 Status
 Proposed
 
-Consequences
-Describe here the resulting context, after applying the decision. All consequences should be listed, not just the "positive" ones.
+Consequences:
+
+One negative consequence of going with one cloud provider is vendor lock in, most scripts and knowledge will be more AWS oriented and if AWS is having issues, it will take more effort or not be possible to fix and our service will be down.  
