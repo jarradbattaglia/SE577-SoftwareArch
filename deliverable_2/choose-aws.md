@@ -22,11 +22,13 @@ Proposed
 Consequences:
 
 Negatives:
+    
     * Going with one cloud provider may lead to vendor lock in, most scripts and knowledge will be more AWS oriented and if AWS is having issues, it will take more effort or not be possible to fix and our service will be down.  
     * If we decide to leverage any services of AWS especially their game oriented ones, the refactor of code and scripts will be a large effort if we migrate to another similar service.
     * On average, their virtual servers may be considered the most expensive, but mostly dependent on use case and can we leverage other services to bring costs down.
 
 Positives:
+    
     * Global reach and availability zones across the world should allow us to load and deploy games in a large amount of regions allowing our players to have low latency connections.  
     * Their gaming products support for kubernetes may be leveraged for our game servers and reducing costs compared to competitors, and they seem to be introducing new products and services more than their competitors.  
     * Also their large amount of services and feature development we view as having benefits for new features that can be leveraged at a later time.  
