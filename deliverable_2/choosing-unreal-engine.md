@@ -1,12 +1,12 @@
-ADR 2: Using unreal engine as our games client and server engine
+# ADR 2: Using unreal engine as our games client and server engine
 
 For our game, we need to decide on a game engine that will help us create our game whether it be a open source engine, closed source with a license, or one that we create ourselves.  We cannot get started on development and prototyping without deciding on a game engine, so this must be decided before production begins.  Game engines come with a suite of features that differ between each one, such as physics and particle simulation, networking, and most importantly graphics rendering. As we are making a multiplayer game, it must be able to also deploy and create packages that can be run on multiple operating systems and devices and be able to help in the process of creating and managing 3D objects and gameplay, and preferably.  The engine must also be supported with updates or be open enough for our team to make any necessary changes.
 
-Decision
+# Decision
 
 We have decided to go with the Unreal Engine game engine due to its industry wide support, simple licensing structure, and high suite of features.
 
-Rationale
+# Rationale
 
 We considered a few different options when deciding on our game engine including building our own engine, the Unity Engine, Unreal Engine, and the Godot Engine.
 
@@ -18,17 +18,20 @@ What lead us to choosing Unreal, was its support for C++ and C#, though its C# s
 
 None of the engines considered are open source, but do come with a restrictive read-only license.
 
-Status
+# Status
+
 Proposed
 
-Consequences
+# Consequences
 
 Negatives: 
-    * Because of choosing Unreal, we have chosen the most expensive of options, compared to other engines, but because of our high requirement goals and networking focused game, we see it as worth the cost and its true impact (royalties) does not become evident until we start selling our game to the public.  
 
-    * The next consequence is we are now restricted on our code, because all engines have their own suite of tools and features, if we decide something does not work or terms change and Unreal becomes not suitable, a large amount of effort will be required to move to a new engine and need a complete rewrite of engine and rendering calls.
+* Because of choosing Unreal, we have chosen the most expensive of options, compared to other engines, but because of our high requirement goals and networking focused game, we see it as worth the cost and its true impact (royalties) does not become evident until we start selling our game to the public.  
+
+* We are now restricted on our code, because all engines have their own suite of tools and features, if we decide something does not work or terms change and Unreal becomes not suitable, a large amount of effort will be required to move to a new engine and need a complete rewrite of engine and rendering calls.
 
 Positives:
-    * Has state of the art graphics rendering, networking toolsets, and general features that that will allow us to quickly prototype and ship faster than on other engines, that would most likely have us needing to invest more development time into creating standard toolsets.
-    * Its large amount of support for different devices and hardware will allow us to release on a large amount of services, while minimizing tooling.
-    * Because of its large use case in the professional industry, hiring and general support should be easier than training people on lesser used engines.
+
+* Has state of the art graphics rendering, networking toolsets, and general features that that will allow us to quickly prototype and ship faster than on other engines, that would most likely have us needing to invest more development time into creating standard toolsets.
+* Its large amount of support for different devices and hardware will allow us to release on a large amount of services, while minimizing tooling.
+* Because of its large use case in the professional industry, hiring and general support should be easier than training people on lesser used engines.
