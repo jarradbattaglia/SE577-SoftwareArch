@@ -4,7 +4,7 @@ For our game, we need to decide on a game engine that will help us create our ga
 
 # Decision
 
-We have decided to go with the Unreal Engine game engine due to its industry wide support, simple licensing structure, and high suite of features.
+We have decided to go with the Unreal Engine game engine and the C++ programming language, due to its industry wide support, simple licensing structure, and high suite of features.
 
 # Rationale
 
