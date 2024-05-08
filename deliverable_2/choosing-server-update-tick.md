@@ -24,7 +24,7 @@ Positives Consequences:
 
 - Lower server resources potentially required and allows more time to process game state
 - Allows a higher latency requirement as players get updates more infrequently
-- On the higher side of performance compared to competitors
+- On the higher side of performance compared to competitors, with room to increase if needed
 
 Negative Consequences:
 
