@@ -1,6 +1,6 @@
 # ADR 5: Choosing a 30hz tick rate for servers
 
-When playing online multiplayer games, typically players send commands and actions to their game server and then the game server will process everyones actions on the same tick, it will then send this information out to all players in the game to update the client state.  We must choose a tick rate for our application as it determines the smoothness and preferred latency of our clients, also a higher tick rate requires faster servers to process actions and game state in a lower period of time and forces a preferred lower latency on players.
+When playing online multiplayer games, typically players send commands and actions to their game server and then the game server will process everyones actions on the same tick, it will then send this information out to all players in the game to update the client state.  We must choose a tick rate for our application as it determines the smoothness and preferred latency of our clients and sets a performance target for development.
 
 # Decision
 

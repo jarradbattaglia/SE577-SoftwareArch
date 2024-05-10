@@ -8,7 +8,7 @@ We have decided to use containers to deploy and run our game server code, with a
 
 # Rationale
 
-The 2 choices we considered were virtual machines like EC2 and a container solution like Kubernetes.
+The 2 choices we considered were virtual machines like EC2, a container solution like Kubernetes, or using Serverless technologies.
 
 The reason for choosing containers over other options like virtual machines is explained mostly by speed, ability to update, and expected result of a deployment.  Bare metal servers are the most expensive option and would require a more complicated setup of game logic to handle multiple servers on a single instance of a machine, which depending on bugs or network, one game taking resources in the application could impact other games on the server as resource allocation is difficult at that level and code must be created to manage that or leverage more services to handle that load, which may increase cost.  
 
