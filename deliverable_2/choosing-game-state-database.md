@@ -1,20 +1,27 @@
 # ADR 4: Choosing NoSQL as our game state storage database
 
-As players perform actions, finish matches, score, level up, use inventory, have specific customization, etc we need to store and retrieve their data in a database.  The database should be available and scalable and be able to receive a large amount of reads and writes as player information and actions may change frequently, but also will require player information to be up-to-date from game to game.  
+As players perform actions, finish matches, score, level up, use inventory, have specific customization, etc we need to store and retrieve their data in a database.  The database should be available and scalable and be able to receive a large amount of reads and writes as player information and actions may change frequently, but also will require player information to be up-to-date from game to game.
 
 # Decision
 
-We have decided to use a NoSQL database to store player information, inventory, actions, etc.
+We have decided to use a NoSQL database, to store game server events and update including player information, inventory, actions, etc.
 
 # Rationale
 
 There were a few choices that we considered for our player data database and that was whether we should go with a NoSQL database or SQL database.
 
-First we looked at NoSQL databases such as MongoDB and DynamoDB (one being cloud provider specific), their main advantages being their many types of data models supported, for instance document based models (JSON) or key value models, or  and high horizontal scalability, with options for strong or eventually consistent data options.  The document model would allow us to change information much more freely, without needing to edit table models like in SQL, but needing to build relational information into data model could lead to messy collections and issues in data.  Depending on databases, consistency is a setting and can be changed to be strongly consistent or not, but the more consistent you need your data, write speeds are affected.
+First we looked at relational databases such as MySQL, PostgresSQL, and Amazon Aurora.  Relational databases use SQL, are ACID compliant, and consistent when data is written to them, but their restriction is based on their data model being much more strict and potential issues around unstructured data, but performance is usually better than their NoSQL counterparts when trying to relate data together.  Also data integrity, for SQL databases, implements things like constraints and primary/foreign keys and allow for data to be kept intact easily.
 
-Next we looked at relational databases such as MySQL, PostgresSQL, and Amazon Aurora.  Relational databases use SQL, are ACID compliant, and consistent when data is written to them, but their restriction is based on their data model being much more strict and potential issues around unstructured data, but performance is usually better than their NoSQL counterparts when trying to relate data together.  Also data integrity, for SQL databases things like constraints and primary/foreign keys allow for data to be kept intact easily, while because of the nature of NoSQL DBs, the service writing to the DB needs to be generally more aware of updating and deleting data.
+Next we looked at NoSQL databases such as MongoDB and DynamoDB (one being cloud provider specific), their main advantages being their many types of data models supported, for instance document based models (JSON) or key value models, or  and high horizontal scalability, with options for strong or eventually consistent data options.  The document model would allow us to change information much more freely, without needing to edit table models like in SQL, but needing to build relational information into data model could lead to messy collections and issues in data.  Depending on databases, consistency is a setting and can be changed to be strongly consistent or not, but the more consistent you need your data, write speeds are affected.
 
-Most of the data stored in our game, may come in different form and events and have the flexibility of a document style database allows teams to write their data more freely.  Where as using SQL managing tables and either using unstructured table formats or changing schema would be more difficult.
+The main factors that lead to us choosing NoSQL database:
+
+- Flexibility: Many types of databases allow us to have many different data model types in a single collection, for instance items with different attributes or properties we could add at any time and allows developers to add new fields as they choose.
+- Scalability: NoSQL databases of many types, allow for more horizontal scalability and adding servers to service our load should be easier
+- Consistency Settings: Many types of NoSQL databases allow some flexibility in writing consistency between databases, which gives us options to how we read and write player information
+- Documentation and Support: Many developers know document style databases, the most popular ones whether managed or community versions have large amount of documentation, so learning and examples should be abundant
+- Deployment Options: We can manage ourselves or go with cloud providers options
+- Latency: NoSQL databases gives us many options around latency and many of the types are known for low latency operations
 
 # Status
 
