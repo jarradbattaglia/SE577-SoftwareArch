@@ -21,7 +21,7 @@ But the reason we decided on AWS is:
 - Amount of Services: Offers a larger amount of general services than Azure and GCP and offers more community products, while Azure has Microsoft specific
 - Gaming Services Support: Gamelift services supports all environments (Linux/Windows), and offers a larger amount of services and integrations than competitors
 - Maturity: Has been the longest running of all 3 considered and has a large amount of documentation and with it being the largest provider, also has a large amount of public documentation and support
-- Kubernetes/Container Support: Many of its products offer Kubernetes support compared to Azure, as well as its gaming services having kubernetes support and general container services 
+- Kubernetes/Container Support: Many of its products offer robust container and Kubernetes support compared to Azure, as well as its gaming services having kubernetes support and general container services 
 
 # Status
 
