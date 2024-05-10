@@ -1,6 +1,6 @@
 # ADR 2: Using unreal engine as our games client and server engine
 
-For our game, we need to decide on a game engine that will help us create our game whether it be a open source engine, closed source with a license, or one that we create ourselves.  We cannot get started on development and prototyping without deciding on a game engine, so this must be decided before production begins.  Game engines come with a suite of features that differ between each one, such as physics and particle simulation, networking, and most importantly graphics rendering. As we are making a multiplayer game, it must be able to also deploy and create packages that can be run on multiple operating systems and devices and be able to help in the process of creating and managing 3D objects and gameplay.  The engine must also be supported with updates and security updates over time.
+For our game, we need to decide on a game engine that will help us create our game.  We cannot get started on development and prototyping without deciding on a game engine, so this must be decided before production begins.  Game engines come with a suite of features that differ between each one, such as physics and particle simulation, networking, and most importantly graphics rendering. As we are making a multiplayer game, it must be able to also deploy and create packages that can be run on multiple operating systems and devices and be able to help in the process of creating and managing 3D objects and gameplay.  The engine must also be supported with updates and security updates over time.
 
 # Decision
 
@@ -18,12 +18,12 @@ What lead us to choosing Unreal, was:
 
 - Support for Multiple Languages:  It supports C++ and C# (though support is new for C#) as its programming languages which gives teams flexibility of choices, Unity only allows C#
 - Wide Use in Industry/Support: More widely used in professional teams throughout the industry, finding new developers with experience should be easier than using other engines.  Large amount of internal documentation exists as well.  
-- State of the art features: It has by far the largest suite of features that includes all of the components we require (cutting edge graphics technologies, networking frameworks 
+- State of the art features: It has by far the largest suite of features that includes all of the components we require (cutting edge graphics technologies, networking frameworks)
 - Robust deployment tools: Large amount of building options and deployment tools including packaging for devices whether it be mobile, console or PCs.
 - Great performance: Has options to scale perforamnce for many types of devices, allowing developers to maximize compatability without large code changes.
 - Networking support: Has many toolsets for networking specific tasks and integrations with external services
 
-To state some negatives of unreal though, are typically around its pricing, which is free until we pass 1 million in sales and then a perpetual 5% royalty as well as costly, its UI is typically seen as more complex with a high learning curve and the engine tools are more 3D focused (with little support for 2D tools).  
+To state some negatives of Unreal engine though, are typically around its pricing, which is free until we pass 1 million in sales and then a perpetual 5% royalty as well as costly, its UI is typically seen as more complex with a high learning curve and the engine tools are more 3D focused (with little support for 2D tools).  
 
 None of the engines considered are open source, but do come with a read-only license.
 
@@ -36,9 +36,9 @@ Proposed
 Positives:
 
 - Has state of the art graphics rendering, networking toolsets, and general features that that will allow us to quickly prototype and ship faster than on other engines, that would most likely have us needing to invest more development time into creating standard toolsets.
-- Its large amount of support for different devices and hardware will allow us to release on a large amount of devices, while minimizing tooling and deployment tools (built-in).
+- Its large amount of support for different devices and hardware will allow us to release/deploy on a large amount of devices, while minimizing tooling and deployment tools (built-in).
 - Because of its large use case in the professional industry, hiring and general support should be easier than training people on lesser used engines or propietary ones.
-- Large amount of community plugins and integrations, which may allow us to develop new features faster
+- Large amount of community plugins and integrations, which will allow us to develop new features faster
 
 Negatives: 
 

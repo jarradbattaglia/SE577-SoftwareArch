@@ -4,7 +4,7 @@ When running multiplayer game servers, we must have servers that clients connect
 
 # Decision
 
-We have decided to use containers to deploy and run our game server code.  Also easier to run development servers locally, without much drift from server environment (MiniKube, local containers, etc).
+We have decided to use containers to deploy and run our game server code.  
 
 # Rationale
 
@@ -14,11 +14,11 @@ We first looked at using EC2 instances and either running multiple instances of 
  
 What lead us to using containers over virtual machines:
 
-- Portability: Using containers, we can deploy the same image locally or on a server and expect similar performance and setup, no matter the operating system or settings required.  
+- Portability/Consistancy: Using containers, we can deploy the same image locally or on a server and expect similar performance and setup, no matter the operating system or settings required.  
 - Ease of deployment: Similar to above, but containers we can use tools like ECS or Kubernetes to deploy and scale our applications much easier and applications load faster than spinning up virtual machine instances.
 - Resource Limiting: Using orchestration layers like ECS or Kubernetes, allows us to limit how much resources a container may use, which helps limit the impact multiple pods on a machine can cause
-- Monitoring: Easier to monitor pods of containers over singular OS instances of those same applications, many monitoring tools exist to monitor pods of containers
-- Scale: As we expect to use either small machines or have multiple games hosted on a single instance of a machine, it becomes important to scale fast and waiting for VM instances to load settings may cause longer load times and thus money.
+- Monitoring: Easier to monitor pods of containers over singular OS instances of those same applications or multiple instances application on a single machine, many monitoring tools exist to monitor pods of containers and built into many products
+- Scale: As we expect to have multiple games hosted on a single instance of a machine, it becomes important to scale fast and waiting for VM instances to load settings may cause longer load times and thus money.
 
 # Status
 
@@ -34,9 +34,11 @@ The advantages of using Containers for running our game servers over using EC2 V
 - The amount of servers to provision for player load can be made on the fly much easier, as the only setup would be to add more pods and scale servers up and decrease them when needed.  Also the resource use of containers is much more variable as we can reserve and limit containers resources more defined.  Managed services like EKS leverages this better than us provisioning servers.
 - Kubernetes and ECS have built in monitoring resources that allow us to see the state of network, resource utilization, and more.  This is built in or easy to deploy, where as other solutions would require us to build out or rely on third party services.
 - Managed solutions like EKS allows us to upgrade our environment in an automated way to a supported version, no knowledge needed of how to upgrade kubernetes
+- Easier to run development servers locally, without much drift from server environment (MiniKube, local containers, etc).
 
 Some of the disadvanatages of using containers and surrounding kubernetes architecture are:
     
-- Where as virtual machines is really a OS level solution, that requires a deep knowledge.  Containers/Kubernetes/ECS will require our support staff to have knowledge of both containers and underlying networking to troubleshoot problems, potentially increasing the time to solve a problem as well as knowledge of network plugins and more. 
+- Where as virtual machines is really a OS level solution.  Containers/Kubernetes/ECS will require our support staff to have knowledge of both containers and underlying networking to troubleshoot problems, potentially increasing the time to solve a problem as well as knowledge of network plugins and more. 
 - If there is something wrong with our instance, that may affect all games hosted on that instance.  With a Virtual machine only the underlying host may be affected, but its networking is not dependent on other hosts like they are when hosting multiple pods.
 - There is more overhead in the container infrastructure than a bare instance server and that may cause some latency delay.
+- Resource competition for networking will be higher between pods on a machine, which may cause issues with latency as many players send actions to the server frequently.
