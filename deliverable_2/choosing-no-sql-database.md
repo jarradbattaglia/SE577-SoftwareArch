@@ -33,9 +33,9 @@ Proposed
 Positive Consequences:
 
 - Many AWS options, whether built in to AWS (DynamoDB) and many open source options to choose from that are supported in cloud services 
-- Tables are unstructured which allows for easier data changes and additions, with less maintenance required around replication
+- Tables are unstructured which allows for easier data changes and additions, with less maintenance required around replication.  Combining databases for certain use cases (caching, persistant) becomes easier
 - Scalable infrastructure is standard for many databases of this type, easier to add replication shards and servers to environment, with better write performance generally than SQL DBs
-- Large community of documentation for many databases
+- Large community of documentation for many databases, finding support should be easy
 - Many settings around consistency and ACID operations in general for many databases, can change requirements and performance targets if needed
 
 
