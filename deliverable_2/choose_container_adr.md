@@ -33,7 +33,6 @@ The advantages of using Containers for running our game servers over using EC2 V
 - The ability to deploy new game servers relies only on the speed of starting up the container and clients connecting.  In the instance of a pod or underlying server experiencing failure, it is easier to take and move containers to other servers, making impact to players minimal, where as VMs we would potentially need to spin up a new server more frequently to handle moving those players.
 - The amount of servers to provision for player load can be made on the fly much easier, as the only setup would be to add more pods and scale servers up and decrease them when needed.  Also the resource use of containers is much more variable as we can reserve and limit containers resources more defined.  Managed services like EKS leverages this better than us provisioning servers.
 - Kubernetes and ECS have built in monitoring resources that allow us to see the state of network, resource utilization, and more.  This is built in or easy to deploy, where as other solutions would require us to build out or rely on third party services.
-- Managed solutions like EKS allows us to upgrade our environment in an automated way to a supported version, no knowledge needed of how to upgrade kubernetes
 - Easier to run development servers locally, without much drift from server environment (MiniKube, local containers, etc).
 
 Some of the disadvanatages of using containers and surrounding kubernetes architecture are:
