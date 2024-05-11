@@ -21,7 +21,7 @@ The main factors that lead to us choosing NoSQL database:
 - Consistency Settings: Many types of NoSQL databases allow some flexibility in writing consistency between databases, which gives us options to how we read and write player information
 - Documentation and Support: Many developers know document style databases, the most popular ones whether managed or community versions have large amount of documentation, so learning and examples should be abundant
 - Deployment Options: We can manage ourselves or go with cloud providers options
-- Latency: NoSQL databases gives us many options around latency and many of the types are known for low latency operations
+- Low Latency: NoSQL databases gives us many options around latency and many of the types are known for low latency operations
 
 # Status
 
@@ -42,6 +42,6 @@ Positive Consequences:
 Negative Consequences:
 
 - Data management may be more intensive as relating data can be more difficult
-- Has less data integrity and application must make sure it is updating or using data correctly, more calls may be needed to keep data intact
+- Has less data integrity and application code must make sure it is updating or using data correctly, more calls may be needed to keep data intact
 - Because of consistency, if our game requires the need for all replicas to have up to date information, may need to design more architecture to support that
 - Many languages or styles to learn depending on database, SQL is standard on their database type, while many layers of NoSQL may require wholly different ways of interacting with them
