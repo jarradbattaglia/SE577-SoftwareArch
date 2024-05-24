@@ -2,7 +2,7 @@
 
 The project is the networking architecture for a game client to connect to dedicated game servers in our environment and communicate with other players and also allow players to make in-app purchases, which they may use in their multiplayer games.  We have identified 2 users of the system, the internal developer and a player who has downloaded our game client on a device of their choosing.  
 
-Below we will describe the general flow of a player user logging in, buying an item and then playing a match.
+Below we will describe the general flow of a player user logging in, buying an item and then playing a match.  As well as technological decisions with each component!
 
 # Project Container Overview
 
