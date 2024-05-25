@@ -18,7 +18,7 @@ The design to note here is that there are 2 main connection types a user may use
 
 ## Account Component
 
-<img src="account_services_component.png" alt="account_services" width="1600" />
+<img src="account_services_component.png" alt="account_services" />
 
 ### Decisions and Flow
 At the beginning of a player starting up the game, that user first logs in to our authentication service, which will be behind a load balancer/api gateway.  They will take that token with them to all services that will then use that token to authenticate the user.  We imagine using amazon cognito to keep complexity down and load balancer to alleviate traffic on a server, which should scale to our needs automatically.  
@@ -28,7 +28,7 @@ Next the user, may want to go purchase a skin or item from our in-game store.  T
 
 ## Matchmaking Component
 
-<img src="matchmaking_component.png" alt="matchmaking" width="1600" />
+<img src="matchmaking_component.png" alt="matchmaking"  />
 
 ### Decisions and Flow
 If the player would like to play a match with other players, in the client they may hit "play match" which will send a request to our matchmaking service api, which will put that player in a "queue", this uses Amazon Gamelift service and their matchmaking logic, which puts a "ticket" into a DynamoDB table, while another service, which we will call the "ranker" service will sort through various metrics (like match history, rank, connection, etc) and match players together, with players not being matched the longest being prioritized higher.  After finding a match for a group of players, it updates the ticket which when the client requests an update on status, will get a notification and accept the match.  
