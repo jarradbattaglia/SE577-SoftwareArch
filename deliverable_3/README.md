@@ -37,7 +37,7 @@ We put a Amazon load balancer in front to distribute load to our matchmaking ser
 
 ## Game Service Component
 
-<img src="game_server_component.png" alt="game_server" width="1600" height=""/>
+<img src="game_server_component.png" alt="game_server" />
 
 ### Decisions and Flow
 Once a match is configured from matchmaking, it sends a notification to our game manager, which will spin up a game instance and report those connections details back to the matchmaking service.  Once players receive that info, they connect the particular instance.  As players load in, the service requests general game information about the players and current patch, which it retrieves from the data service api, as players configure their character, the game server will also get purchase information from account services and allow a player to use skins if available.  After the game is completed, the game manager updates the data api service with match information and stats and cleans up the game session.
@@ -46,7 +46,7 @@ Some decisions here is the game manager, which is a normal web application that 
 
 ## Data Services Component
 
-<img src="data_service_component.png" alt="data_service" width="2000" />
+<img src="data_service_component.png" alt="data_service"  />
 
 ### Decisions and Flow
 
